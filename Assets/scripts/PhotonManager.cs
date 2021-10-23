@@ -26,14 +26,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom(){
         if (PhotonNetwork.IsMasterClient)
         {
-            GameObject Player1 = PhotonNetwork.Instantiate("Player1", new Vector3(-15, 0, -5), Quaternion.identity);
+            GameObject Player1 = PhotonNetwork.Instantiate("Player1", new Vector3(-65, -50, -5), Quaternion.identity);
             Player1.name = "Player1";
             PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable(){{"field", 1}});
         }
         else
         {
             int direction = (int)PhotonNetwork.CurrentRoom.CustomProperties["field"];
-            GameObject Player2 = PhotonNetwork.Instantiate("Player1", new Vector3(direction*15, 0, -5), Quaternion.identity);
+            GameObject Player2 = PhotonNetwork.Instantiate("Player1", new Vector3(-45, -50, -5), Quaternion.identity);
             Player2.name = "Player2";
         }
         

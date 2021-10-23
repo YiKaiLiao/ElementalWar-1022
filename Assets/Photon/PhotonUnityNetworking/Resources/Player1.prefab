@@ -19,9 +19,10 @@ GameObject:
   - component: {fileID: 4609132770446082588}
   - component: {fileID: 4842285954486266298}
   - component: {fileID: 6536679425152093792}
+  - component: {fileID: -1061812824026636201}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 717310319
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 98669ea49f47bbb4d80419a7cbbaafc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -315,6 +316,22 @@ MonoBehaviour:
   maxHealth: 100
   rb: {fileID: 4609132770446082565}
   cam: {fileID: 1493931434229830177, guid: d493f638693181c409b7b32810d33574, type: 3}
+--- !u!114 &-1061812824026636201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4609132770446082566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7022d9c6abc10404ca5b425633af04b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1_hasfield: 0
+  player1_field_color: None
+  player2_hasfield: 0
+  player2_field_color: None
 --- !u!1 &4609132771035683180
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +472,10 @@ PrefabInstance:
     - target: {fileID: 6537685841109549517, guid: 79b31f84b3ddc8a4785be2efba3e87bd, type: 3}
       propertyPath: m_RenderMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537685841109549517, guid: 79b31f84b3ddc8a4785be2efba3e87bd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 717310319
       objectReference: {fileID: 0}
     - target: {fileID: 6537685841109549518, guid: 79b31f84b3ddc8a4785be2efba3e87bd, type: 3}
       propertyPath: m_PresetInfoIsWorld

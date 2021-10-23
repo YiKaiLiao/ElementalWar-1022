@@ -62,9 +62,36 @@ public class Player : MonoBehaviour
         
         bool isHitByBullet = other.gameObject.tag == "Bullet";
         //if player is hit, destroy bullet and change healthBar
+        bool isMaster = PhotonNetwork.IsMasterClient;
+        if (isMaster)
+        {
+
+            bool player2_hasfield = GetComponent<Place_field>().player2_hasfield;
+            Debug.Log("player1" + player2_hasfield);
+            if (player2_hasfield)
+            {
+                
+                string property = GetComponent<Place_field>().player2_field_color;
+                Debug.Log("property" + property);
+            }
+        }
+        else
+        {
+            bool player1_hasfield = GetComponent<Place_field>().player1_hasfield;
+            Debug.Log("player1" + player1_hasfield);
+            if (player1_hasfield)
+            {
+               
+                string property = GetComponent<Place_field>().player1_field_color;
+                Debug.Log("property" + property);
+            }
+        }
+
+
         if (isHitByBullet) {
             //Debug.Log("is hit! "+name);
-            bullet_property b_p = other.gameObject.GetComponent<bullet_property>();
+            //bullet_property b_p = other.gameObject.GetComponent<bullet_property>();
+
             TakeDamage(2*ChangeWeapon.bulletPower);
             Destroy(other.gameObject, 0.0f);
         }

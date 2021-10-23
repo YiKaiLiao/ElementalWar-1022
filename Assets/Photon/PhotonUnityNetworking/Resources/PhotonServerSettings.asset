@@ -44,6 +44,8 @@ MonoBehaviour:
   - change_field
   - change_color_RPC
   - TakeDamage
+  - change_field_player1
+  - change_field_player2
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

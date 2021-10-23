@@ -7,6 +7,9 @@ TagManager:
   - Bullet1
   - Bullet2
   - Bullet
+  - field
+  - Player1_field
+  - Player2_field
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - Bullet
   - Water
   - UI
-  - 
+  - field
   - 
   - 
   - 
@@ -46,6 +49,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: field
+    uniqueID: 4237838843
     locked: 0
   - name: card
     uniqueID: 877626943
