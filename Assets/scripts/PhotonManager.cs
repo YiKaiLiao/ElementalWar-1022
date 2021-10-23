@@ -28,10 +28,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         {
             GameObject Player1 = PhotonNetwork.Instantiate("Player1", new Vector3(-15, 0, -5), Quaternion.identity);
             Player1.name = "Player1";
+            PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable(){{"field", 1}});
         }
         else
         {
-            GameObject Player2 = PhotonNetwork.Instantiate("Player1", new Vector3(15, 0, -5), Quaternion.identity);
+            int direction = (int)PhotonNetwork.CurrentRoom.CustomProperties["field"];
+            GameObject Player2 = PhotonNetwork.Instantiate("Player1", new Vector3(direction*15, 0, -5), Quaternion.identity);
             Player2.name = "Player2";
         }
         
@@ -40,6 +42,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         PhotonNetwork.LocalPlayer.CustomProperties = ht;
         //Debug.Log(PhotonNetwork.IsMasterClient);
     }
+    public override void OnMasterClientSwitched(Photon.Realtime.Player newMasterClient) {
+        int fieldSide = -1*Player.side;
+        PhotonNetwork.CurrentRoom.SetCustomProperties(new ExitGames.Client.Photon.Hashtable(){{"field", fieldSide}});
+    }	
+
 
     // UnityEngine.Analytics
     #if ENABLE_CLOUD_SERVICES_ANALYTICS

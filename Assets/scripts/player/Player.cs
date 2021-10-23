@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 {
     public int maxHealth = 100;
     //public  GameObject healthBar;
+    public static int side;
     private  HealthBar healthBar;
     public static int currentHP;
     public static int currentEP;
@@ -22,6 +23,10 @@ public class Player : MonoBehaviour
     //public Weaponbase Weapon;
     void Start()
     {
+        if(transform.position.x > 0)
+            side = 1;
+        else
+            side = -1;
         photonView = GetComponent<PhotonView>();
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.SetMaxHealth(maxHealth);
@@ -69,7 +74,7 @@ public class Player : MonoBehaviour
         //if player is hit, destroy bullet and change healthBar
         if (isHitByBullet) {
             //Debug.Log("is hit! "+name);
-            //bullet_property b_p = other.gameObject.GetComponent<bullet_property>();
+            bullet_property b_p = other.gameObject.GetComponent<bullet_property>();
             TakeDamage(2*ChangeWeapon.bulletPower);
             Destroy(other.gameObject, 0.0f);
         }

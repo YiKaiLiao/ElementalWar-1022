@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66a4bf0c6c4a6141b5e5a3c33842550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSprite: {fileID: 0}
+  bulletSprite: {fileID: 3815141518301349026}
   col: 
 --- !u!114 &2031852707097487994
 MonoBehaviour:
