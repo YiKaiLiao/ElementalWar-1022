@@ -18,8 +18,6 @@ public class Player : MonoBehaviour
     public static int PlayerMoveSpeed;
     public static List<Card> currentWeapon;
     private PhotonView photonView;
-    /*public HealthBar healthBarOne;
-    public HealthBar healthBarTwo;*/
     //public Weaponbase Weapon;
     void Start()
     {
@@ -30,15 +28,7 @@ public class Player : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         healthBar = GetComponentInChildren<HealthBar>();
         healthBar.SetMaxHealth(maxHealth);
-        //healthBar.SetMaxHealth(maxHealth);
         currentHP = maxHealth;
-      //  Weapon = GameObject.Find("CanvasThree").GetComponentInChildren(typeof(Weaponbase)) as Weaponbase;
-        // currentHealth = maxHealth;
-        // healthBar.SetMaxHealth(maxHealth);
-        /*healthBarOne = GameObject.Find("CanvasOne").GetComponentInChildren(typeof(HealthBar)) as HealthBar;;
-        healthBarTwo = GameObject.Find("CanvasTwo").GetComponentInChildren(typeof(HealthBar)) as HealthBar;
-        healthBarOne.SetMaxHealth(maxHealth);
-        healthBarTwo.SetMaxHealth(maxHealth);*/
     }
     public Rigidbody2D rb;
     public Camera cam;
@@ -79,7 +69,6 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject, 0.0f);
         }
     }
-
     void TakeDamage(int damage)
     {
         //Debug.Log("take damage");   

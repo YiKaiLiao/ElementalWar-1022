@@ -43,6 +43,7 @@ MonoBehaviour:
   - UpdateShoot
   - change_field
   - change_color_RPC
+  - TakeDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
